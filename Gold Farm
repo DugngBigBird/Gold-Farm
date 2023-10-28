@@ -30,6 +30,7 @@ Menu.Position = UDim2.new(0.230337083, 0, 0.350427359, 0)
 Menu.Size = UDim2.new(0, 335, 0, 215)
 Menu.Active = true
 Menu.Visible = true
+Menu.Draggable = true
 
 UICorner.Parent = Menu
 
