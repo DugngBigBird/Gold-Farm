@@ -1,0 +1,20 @@
+--BROUGHT TO YOU BY RSCRIPTS.NET--
+
+function getMoney()
+for i=1,10 do
+    a = "CaveStage"..i
+    wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.BoatStages.NormalStages[a].DarknessPart.CFrame
+end
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").BoatStages.NormalStages.TheEnd.GoldenChest.Trigger.CFrame
+end
+game:GetService("RunService").Heartbeat:connect(function()
+    game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end)
+getMoney()
+while wait(2) do
+    if game.Players.LocalPlayer.Character.HumanoidRootPart.Position ~= game:GetService("Workspace").BoatStages.NormalStages.TheEnd.GoldenChest.Trigger.Position then
+        getMoney()   
+        end
+    end
