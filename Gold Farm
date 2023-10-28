@@ -115,6 +115,10 @@ TextButton.Size = UDim2.new(0, 78, 0, 75)
 TextButton.Font = Enum.Font.Creepster
 TextButton.TextColor3 = Color3.fromRGB(38, 255, 0)
 TextButton.TextSize = 14.000
+TextButton.MouseButton1Down:Connect(function()
+	Menu.Visible = true
+	ImageLabel.Visible = false
+end)
 
 UICorner_2.Parent = ImageLabel
 
