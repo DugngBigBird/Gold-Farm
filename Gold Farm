@@ -1,20 +1,121 @@
---BROUGHT TO YOU BY RSCRIPTS.NET--
+-- Gui to Lua
+-- Version: 3.2
 
-function getMoney()
-for i=1,10 do
-    a = "CaveStage"..i
-    wait(0.5)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.BoatStages.NormalStages[a].DarknessPart.CFrame
-end
-wait(1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").BoatStages.NormalStages.TheEnd.GoldenChest.Trigger.CFrame
-end
-game:GetService("RunService").Heartbeat:connect(function()
-    game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Menu = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local HackFarmGold = Instance.new("TextButton")
+local Frame = Instance.new("Frame")
+local TextLabel_2 = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+local TextButton = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Menu.Name = "Menu"
+Menu.Parent = ScreenGui
+Menu.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+Menu.BackgroundTransparency = 0.200
+Menu.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Menu.BorderSizePixel = 0
+Menu.Position = UDim2.new(0.230337083, 0, 0.350427359, 0)
+Menu.Size = UDim2.new(0, 335, 0, 215)
+Menu.Active = true
+Menu.Visible = true
+
+UICorner.Parent = Menu
+
+TextLabel.Parent = Menu
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.391044766, 0, 0.111627907, 0)
+TextLabel.Size = UDim2.new(0, 204, 0, 91)
+TextLabel.Font = Enum.Font.Gotham
+TextLabel.Text = "Elgato Hub - Build A Boat"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 14.000
+
+HackFarmGold.Name = "Hack Farm Gold"
+HackFarmGold.Parent = Menu
+HackFarmGold.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HackFarmGold.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HackFarmGold.BorderSizePixel = 0
+HackFarmGold.Position = UDim2.new(0, 0, 0.209302321, 0)
+HackFarmGold.Size = UDim2.new(0, 117, 0, 50)
+HackFarmGold.Font = Enum.Font.Gotham
+HackFarmGold.Text = "Farm Gold (Error)"
+HackFarmGold.TextColor3 = Color3.fromRGB(0, 0, 0)
+HackFarmGold.TextSize = 14.000
+HackFarmGold.MouseButton1Down:Connect(function()
+	--BROUGHT TO YOU BY RSCRIPTS.NET--
+
+	function getMoney()
+		for i=1,10 do
+			a = "CaveStage"..i
+			wait(0.5)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.BoatStages.NormalStages[a].DarknessPart.CFrame
+		end
+		wait(1)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").BoatStages.NormalStages.TheEnd.GoldenChest.Trigger.CFrame
+	end
+	game:GetService("RunService").Heartbeat:connect(function()
+		game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+	end)
+	getMoney()
+	while wait(2) do
+		if game.Players.LocalPlayer.Character.HumanoidRootPart.Position ~= game:GetService("Workspace").BoatStages.NormalStages.TheEnd.GoldenChest.Trigger.Position then
+			getMoney()   
+		end
+	end
 end)
-getMoney()
-while wait(2) do
-    if game.Players.LocalPlayer.Character.HumanoidRootPart.Position ~= game:GetService("Workspace").BoatStages.NormalStages.TheEnd.GoldenChest.Trigger.Position then
-        getMoney()   
-        end
-    end
+
+Frame.Parent = Menu
+Frame.BackgroundColor3 = Color3.fromRGB(0, 255, 8)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.349253744, 0, 0, 0)
+Frame.Size = UDim2.new(0, 4, 0, 215)
+
+TextLabel_2.Parent = Menu
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Size = UDim2.new(0, 117, 0, 49)
+TextLabel_2.Font = Enum.Font.Gotham
+TextLabel_2.Text = "Farm"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextSize = 14.000
+
+ImageLabel.Parent = ScreenGui
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.0471910127, 0, 0.294871807, 0)
+ImageLabel.Size = UDim2.new(0, 78, 0, 75)
+ImageLabel.Image = "rbxassetid://14846985674"
+ImageLabel.Active = true
+
+TextButton.Parent = ImageLabel
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundTransparency = 1.000
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Size = UDim2.new(0, 78, 0, 75)
+TextButton.Font = Enum.Font.Creepster
+TextButton.TextColor3 = Color3.fromRGB(38, 255, 0)
+TextButton.TextSize = 14.000
+
+UICorner_2.Parent = ImageLabel
+
+UIAspectRatioConstraint.Parent = ImageLabel
