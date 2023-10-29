@@ -56,7 +56,7 @@ HackFarmGold.BorderSizePixel = 0
 HackFarmGold.Position = UDim2.new(0, 0, 0.209302321, 0)
 HackFarmGold.Size = UDim2.new(0, 117, 0, 50)
 HackFarmGold.Font = Enum.Font.Gotham
-HackFarmGold.Text = "Farm Gold (Error)"
+HackFarmGold.Text = "Farm Gold [Error]"
 HackFarmGold.TextColor3 = Color3.fromRGB(0, 0, 0)
 HackFarmGold.TextSize = 14.000
 HackFarmGold.MouseButton1Down:Connect(function()
