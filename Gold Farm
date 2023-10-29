@@ -10,9 +10,11 @@ local TextLabel = Instance.new("TextLabel")
 local HackFarmGold = Instance.new("TextButton")
 local Frame = Instance.new("Frame")
 local TextLabel_2 = Instance.new("TextLabel")
+local exit = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
 local ImageLabel = Instance.new("ImageLabel")
 local TextButton = Instance.new("TextButton")
-local UICorner_2 = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 
 --Properties:
@@ -98,6 +100,24 @@ TextLabel_2.Text = "Farm"
 TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel_2.TextSize = 14.000
 
+exit.Name = "exit"
+exit.Parent = Menu
+exit.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+exit.BorderColor3 = Color3.fromRGB(0, 0, 0)
+exit.BorderSizePixel = 0
+exit.Position = UDim2.new(0.886567175, 0, 0, 0)
+exit.Size = UDim2.new(0, 38, 0, 30)
+exit.Font = Enum.Font.SourceSans
+exit.Text = "X"
+exit.TextColor3 = Color3.fromRGB(0, 0, 0)
+exit.TextSize = 14.000
+exit.MouseButton1Down:Connect(function()
+	Menu.Visible = false
+	ImageLabel.Visible = true
+end)
+
+UICorner_2.Parent = exit
+
 ImageLabel.Parent = ScreenGui
 ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -121,6 +141,6 @@ TextButton.MouseButton1Down:Connect(function()
 	ImageLabel.Visible = false
 end)
 
-UICorner_2.Parent = ImageLabel
+UICorner_3.Parent = ImageLabel
 
 UIAspectRatioConstraint.Parent = ImageLabel
