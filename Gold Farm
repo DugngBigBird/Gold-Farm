@@ -12,6 +12,10 @@ local Frame = Instance.new("Frame")
 local TextLabel_2 = Instance.new("TextLabel")
 local exit = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
+local AfkFarm = Instance.new("TextButton")
+local TextLabel_3 = Instance.new("TextLabel")
+local TextLabel_4 = Instance.new("TextLabel")
+local AntiAfk = Instance.new("TextButton")
 local ImageLabel = Instance.new("ImageLabel")
 local TextButton = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
@@ -30,8 +34,8 @@ Menu.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Menu.BorderSizePixel = 0
 Menu.Position = UDim2.new(0.230337083, 0, 0.350427359, 0)
 Menu.Size = UDim2.new(0, 335, 0, 215)
-Menu.Active = true
 Menu.Visible = true
+Menu.Active = true
 Menu.Draggable = true
 
 UICorner.Parent = Menu
@@ -50,13 +54,13 @@ TextLabel.TextSize = 14.000
 
 HackFarmGold.Name = "Hack Farm Gold"
 HackFarmGold.Parent = Menu
-HackFarmGold.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HackFarmGold.BackgroundColor3 = Color3.fromRGB(4, 0, 240)
 HackFarmGold.BorderColor3 = Color3.fromRGB(0, 0, 0)
 HackFarmGold.BorderSizePixel = 0
 HackFarmGold.Position = UDim2.new(0, 0, 0.209302321, 0)
 HackFarmGold.Size = UDim2.new(0, 117, 0, 50)
 HackFarmGold.Font = Enum.Font.Gotham
-HackFarmGold.Text = "Farm Gold [Error]"
+HackFarmGold.Text = "Farm Gold (Error)"
 HackFarmGold.TextColor3 = Color3.fromRGB(0, 0, 0)
 HackFarmGold.TextSize = 14.000
 HackFarmGold.MouseButton1Down:Connect(function()
@@ -80,6 +84,7 @@ HackFarmGold.MouseButton1Down:Connect(function()
 			getMoney()   
 		end
 	end
+
 end)
 
 Frame.Parent = Menu
@@ -118,6 +123,101 @@ end)
 
 UICorner_2.Parent = exit
 
+AfkFarm.Name = "Afk Farm"
+AfkFarm.Parent = Menu
+AfkFarm.BackgroundColor3 = Color3.fromRGB(232, 244, 0)
+AfkFarm.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AfkFarm.BorderSizePixel = 0
+AfkFarm.Position = UDim2.new(0, 0, 0.469767451, 0)
+AfkFarm.Size = UDim2.new(0, 117, 0, 50)
+AfkFarm.Font = Enum.Font.Gotham
+AfkFarm.Text = ""
+AfkFarm.TextColor3 = Color3.fromRGB(0, 0, 0)
+AfkFarm.TextSize = 14.000
+AfkFarm.MouseButton1Down:Connect(function()
+	local args = { [1] = true } workspace.RefreshLocks:FireServer(unpack(args))
+	noclip = false
+	game:GetService('RunService').Stepped:connect(function()
+		if noclip then
+			game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+		end
+	end)
+	noclip = not noclip
+	game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+	local Character = game:GetService('Players').LocalPlayer.Character
+	wait(3)
+	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-69.0208588, 108.308792, 644.431091))
+	wait(1)
+	local CFrameEnd = CFrame.new(-41.7870445, 77.1494141, 8675.35059) -- Place your coords in here
+	local Time = 33-- Time in seconds
+	local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
+	tween:Play()
+	tween.Completed:Wait(X) --- Completes, no need for additional wait time
+	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-63.2413521, -357.34967, 8819.09277)) wait(0.5)
+	local CFrameEnd = CFrame.new(-55.8801956, -361.116333, 9488.1377) -- Place your coords in here
+	local Time = 0 -- Time in seconds
+	local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
+	tween:Play()
+	tween.Completed:Wait(X)
+	game.Players.LocalPlayer.CharacterAdded:Connect(function()
+		wait(3)
+		game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-69.0208588, 108.308792, 644.431091))
+		wait(1)
+		local CFrameEnd = CFrame.new(-41.7870445, 77.1494141, 8675.35059) -- Place your coords in here
+		local Time = 33-- Time in seconds
+		local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
+		tween:Play()
+		tween.Completed:Wait(X) --- Completes, no need for additional wait time
+		game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-63.2413521, -357.34967, 8819.09277)) wait(0.5)
+		local CFrameEnd = CFrame.new(-55.8801956, -361.116333, 9488.1377) -- Place your coords in here
+		local Time = 0 -- Time in seconds
+		local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
+		tween:Play()
+		tween.Completed:Wait(X)
+	end)
+	for i=1, math.huge do
+		wait(200)
+		game.Players.LocalPlayer.Character.Head:Destroy() end
+end)
+
+TextLabel_3.Parent = AfkFarm
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Size = UDim2.new(0, 116, 0, 28)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "AFK FARM"
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.TextSize = 14.000
+
+TextLabel_4.Parent = AfkFarm
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_4.BorderSizePixel = 0
+TextLabel_4.Position = UDim2.new(0, 0, 0.280000001, 0)
+TextLabel_4.Size = UDim2.new(0, 116, 0, 36)
+TextLabel_4.Font = Enum.Font.SourceSans
+TextLabel_4.Text = "(YOU CAN'T TURN OFF)"
+TextLabel_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_4.TextSize = 14.000
+
+AntiAfk.Name = "Anti Afk"
+AntiAfk.Parent = Menu
+AntiAfk.BackgroundColor3 = Color3.fromRGB(2, 250, 233)
+AntiAfk.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AntiAfk.BorderSizePixel = 0
+AntiAfk.Position = UDim2.new(0, 0, 0.730232537, 0)
+AntiAfk.Size = UDim2.new(0, 117, 0, 50)
+AntiAfk.Font = Enum.Font.Gotham
+AntiAfk.Text = "ANTI AFK"
+AntiAfk.TextColor3 = Color3.fromRGB(0, 0, 0)
+AntiAfk.TextSize = 14.000
+AntiAfk.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/KazeOnTop/Rice-Anti-Afk/main/Wind", true))()
+end)
+
 ImageLabel.Parent = ScreenGui
 ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -132,8 +232,9 @@ TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.BackgroundTransparency = 1.000
 TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.BorderSizePixel = 0
-TextButton.Size = UDim2.new(0, 78, 0, 75)
+TextButton.Size = UDim2.new(0, 75, 0, 75)
 TextButton.Font = Enum.Font.Creepster
+TextButton.Text = "ELGATO HUB"
 TextButton.TextColor3 = Color3.fromRGB(38, 255, 0)
 TextButton.TextSize = 14.000
 TextButton.MouseButton1Down:Connect(function()
